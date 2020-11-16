@@ -16,4 +16,4 @@ def fib(n, a=0, b=1):
 
 if __name__ == '__main__':
     print(fibonacci(10))
-    print(fib(10))
+    print(fib(100))
