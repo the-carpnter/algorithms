@@ -1,3 +1,19 @@
+# Iterative Approach
+def bin_search(array, item):
+    low = 0
+    high = len(array) - 1
+    while low <= high:
+        mid = (low + high)//2
+        if array[mid]==item:
+            return 'The item found at index: ' + str(mid)
+        if item > array[mid]:
+            low = mid + 1
+        else:
+            high = mid - 1
+    return 'Item not found!'
+
+
+# Recursive Approach
 def binary_search(array, item, left, right):
 
     # base case of recursive function calls
@@ -28,5 +44,5 @@ def binary_search(array, item, left, right):
         return binary_search(array, item, middle+1, right)
     
 if __name__ == '__main__':
-    x = binary_search(range(0, 1000, 2), 500, 0, 499)
-    print('The element is at: {}'.format(x))
+    print(bin_search(range(100), 23))
+    print(binary_search(range(100), 23, 0, 99))
