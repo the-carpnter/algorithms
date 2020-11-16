@@ -14,7 +14,18 @@ def cons(string, i=0, count=0):
         return 'The no of consonants: ' + str(count)
     return cons(string, i+1, count)
 
+# Recursive Solution2
+def cons2(string):
+    if string == '':
+        return 0
+    if string[0].isalpha() and string[0].lower() not in 'aeiou':
+        return 1 + cons2(string[1:])
+    else:
+        return cons2(string[1:])
+
+
 if __name__=='__main__':
     string = 'AEIOUxyZ1'
     print(consonants(string))
     print(cons(string))
+    print(cons2(string))
